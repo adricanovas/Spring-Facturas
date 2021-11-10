@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Project</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>Create New Project</h2>
+            <form th:action="@{/}" th:object="${project}" method="post">
+                <ul th:if="${#fields.hasErrors('*')}">
+                    <li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>
+                </ul>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" th:field="*{description}" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block mt-3">Save Project</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

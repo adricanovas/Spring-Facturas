@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<title>Lista de Facturas</title>
+</head>
+
+<body>
+	<h3>Lista de Facturas</h3>
+	<hr>
+	<form action="/form" method="post">
+		<button type="submit">Nueva Factura</button>
+	</form>
+	<hr>
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr style="text-align: center; vertical-align: middle">
+				<th>Código de Factura</th>
+				<th>NIF</th>
+				<th>Nº de productos</th>
+				<th>Importe total</th>
+				<th>Importe con IVA</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="tempFacturas:${facturas}" style="text-align: center; vertical-align: middle">
+				<td th:text="${tempFacturas.codigo}"></td>
+				<td th:text="${tempFacturas.nif}"></td>
+				<td th:text="${tempFacturas.nproductos}"></td>
+				<td th:text="${tempFacturas.importe}"></td>
+				<td th:text="${tempFacturas.importeIVA}"></td>
+				<td>
+					<form action="archive?id=${x.id}" method="post">
+						<button type="submit">Ver</button>
+					</form>
+					<form action="archive?id=${x.id}" method="post">
+						<button type="submit">Editar</button>
+					</form>
+					<form action="archive?id=${x.id}" method="post">
+						<button type="submit">Borrar</button>
+					</form>
+					<form action="archive?id=${x.id}" method="post">
+						<button type="submit">Consolidar</button>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
