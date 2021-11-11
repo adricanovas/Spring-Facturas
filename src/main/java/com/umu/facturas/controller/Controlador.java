@@ -28,8 +28,7 @@ public class Controlador {
 
 	@RequestMapping("/form")
 	public String form(Model model) {
-
-        model.addAttribute("project", new Factura());
+        model.addAttribute("factura", new Factura());
 		return "form";
 	}
 }

@@ -55,4 +55,19 @@ public class Factura implements java.io.Serializable{
     public Factura(){
 
     }
+    public String getNif() {
+        return this.nif;
+    }
+
+    public void setNif(String nif) {
+        this.nif = nif;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
