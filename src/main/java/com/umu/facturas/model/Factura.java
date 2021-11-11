@@ -43,6 +43,14 @@ public class Factura implements java.io.Serializable{
     inverseJoinColumns = @JoinColumn(name = "producto_id"))
     private List<Producto> productos = new ArrayList<Producto>();
 
+    public List<Producto> getProductos() {
+        return this.productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
     @Transient
     public double getImporteTotal(){
         double importe = 0;

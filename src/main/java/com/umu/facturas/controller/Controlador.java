@@ -27,7 +27,8 @@ public class Controlador {
 	}
 
 	@RequestMapping("/form")
-	public String form(Model model) {
+	public String form(Model model, Boolean edit) {
+		model.addAttribute("editable", edit);
         model.addAttribute("factura", new Factura());
 		model.addAttribute("productos", productoRep.findAll());
 		return "form";
