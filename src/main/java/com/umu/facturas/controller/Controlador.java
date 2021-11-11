@@ -21,14 +21,15 @@ public class Controlador {
 	private ProductoRepository productoRep;
 
 	@RequestMapping("/")
-	public String index(Model modelo) {
-		modelo.addAttribute("facturas", facturaRep.findAll());
+	public String index(Model model) {
+		model.addAttribute("facturas", facturaRep.findAll());
 		return "index";
 	}
 
 	@RequestMapping("/form")
 	public String form(Model model) {
         model.addAttribute("factura", new Factura());
+		model.addAttribute("productos", productoRep.findAll());
 		return "form";
 	}
 }

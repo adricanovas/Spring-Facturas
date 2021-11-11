@@ -31,21 +31,41 @@ public class Producto implements java.io.Serializable{
     @Column(name = "ID", unique = true, nullable = false)
     @GeneratedValue(generator = "generador_producto_seq", strategy = GenerationType.SEQUENCE)
     private Integer id;
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     
     @Column(name = "DESCRIPCION", nullable = false, length = 256)
     private String descripcion;
 
+    public String getDescripcion() {
+        return this.descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     @Column(name = "PRECIO", nullable = false, precision = 17, scale = 0)
     private double precio;
+
+    public double getPrecio() {
+        return this.precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
 
     @ManyToMany(mappedBy = "productos")
     private List<Factura> factura = new LinkedList<Factura>();
 
     public Producto(){
 
-    }
-
-    public double getPrecio() {
-        return this.precio;
     }
 }

@@ -25,9 +25,17 @@
                         <label>NIF</label>
                         <input type="text" class="form-control" th:field="*{nif}">
                     </div>
+                    <div class="col-md-12 form-group">
+                        <label for="exampleFormControlSelect1">Incluir producto</label>
+                        <select class="form-control" id="productSelect">
+                            <option th:each="tempProductos:${productos}" th:text="${tempProductos.descripcion}"></option>
+                        </select>
+                        <button type="addProduct" class="btn btn-primary btn-block mt-3">Insertar</button>
+                    </div>
                 </div>
-                
-                <button type="submit" class="btn btn-primary btn-block mt-3">Save Project</button>
+            <form action="archive?id=${x.id}" method="post">
+                <button type="submit" class="btn btn-primary btn-block mt-3">Guardar Factura</button>
+            </form>
             </form>
         </div>
     </div>
