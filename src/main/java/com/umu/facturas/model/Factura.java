@@ -3,24 +3,17 @@ package com.umu.facturas.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import org.hibernate.annotations.ManyToAny;
 
 import lombok.Data;
 
@@ -43,14 +36,6 @@ public class Factura implements java.io.Serializable{
     inverseJoinColumns = @JoinColumn(name = "producto_id"))
     private List<Producto> productos = new ArrayList<Producto>();
 
-    public List<Producto> getProductos() {
-        return this.productos;
-    }
-
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
-    }
-
     @Transient
     public double getImporteTotal(){
         double importe = 0;
@@ -58,6 +43,11 @@ public class Factura implements java.io.Serializable{
             importe += p.getPrecio();
         }
         return importe;
+    }
+
+    @Transient
+    public double getImporteIVA(){
+        return getImporteTotal() + getImporteTotal() * 0.21;
     }
 
     public Factura(){
@@ -77,5 +67,17 @@ public class Factura implements java.io.Serializable{
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public List<Producto> getProductos() {
+        return this.productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
+    public int getnproductos(){
+        return this.productos.size();
     }
 }

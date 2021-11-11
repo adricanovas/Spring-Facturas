@@ -32,11 +32,11 @@
 		</thead>
 		<tbody>
 			<tr th:each="tempFacturas:${facturas}" style="text-align: center; vertical-align: middle">
-				<td th:text="${tempFacturas.codigo}"></td>
+				<td th:text="${tempFacturas.id}"></td>
 				<td th:text="${tempFacturas.nif}"></td>
 				<td th:text="${tempFacturas.nproductos}"></td>
-				<td th:text="${tempFacturas.importe}"></td>
-				<td th:text="${tempFacturas.importeIVA}"></td>
+				<td th:text="${tempFacturas.importeTotal}"></td>
+				<td th:text="${tempFacturas.getImporteTotal()}"></td>
 				<td>
 					<form action="archive?id=${x.id}" method="post">
 						<button type="submit">Ver</button>
