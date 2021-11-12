@@ -7,7 +7,9 @@ import com.umu.facturas.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class Controlador {
@@ -29,5 +31,11 @@ public class Controlador {
         model.addAttribute("factura", new Factura());
 		model.addAttribute("productos", productoRep.findAll());
 		return "form";
+	}
+
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public String saveFactura(@ModelAttribute("factura") Factura factura){
+		facturaRep.save(factura);
+		return "redirect:/";
 	}
 }

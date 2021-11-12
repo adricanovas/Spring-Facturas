@@ -15,8 +15,8 @@
 <body>
 	<h3>Lista de Facturas</h3>
 	<hr>
-	<form action="/form" method="post">
-		<button type="submit">Nueva Factura</button>
+	<form action="/form" method="post" style="text-align: center;">
+		<button type="submit" class="btn btn-primary btn-block" style="width:200px">Nueva Factura</button>
 	</form>
 	<hr>
 	<table class="table table-hover">
@@ -38,18 +38,28 @@
 				<td th:text="${tempFacturas.getImporteTotal()}"></td>
 				<td th:text="${tempFacturas.getImporteIVA()}"></td>
 				<td>
-					<form action="archive?id=${x.id}" method="post">
-						<button type="submit">Ver</button>
-					</form>
-					<form action="archive?id=${x.id}" method="post">
-						<button type="submit">Editar</button>
-					</form>
-					<form action="archive?id=${x.id}" method="post">
-						<button type="submit">Borrar</button>
-					</form>
-					<form action="archive?id=${x.id}" method="post">
-						<button type="submit">Consolidar</button>
-					</form>
+					<div class="row">
+						<div class="col col-lg-2">
+							<form action="archive?id=${x.id}" method="post">
+								<button type="submit" class="btn btn-primary btn-block">Ver</button>
+							</form>
+						</div>
+						<div class="col col-lg-2">
+							<form action="archive?id=${x.id}" method="post">
+								<button type="submit" class="btn btn-primary btn-block">Editar</button>
+							</form>
+						</div>
+						<div class="col col-lg-2">
+							<form action="archive?id=${x.id}" method="post">
+								<button type="submit" class="btn btn-primary btn-block">Borrar</button>
+							</form>
+						</div>
+						<div class="col col-lg-2">
+							<form action="archive?id=${x.id}" method="post">
+								<button type="submit" class="btn btn-primary btn-block">Consolidar</button>
+							</form>
+						</div>
+					</div>
 				</td>
 			</tr>
 		</tbody>

@@ -28,7 +28,7 @@ public class Factura implements java.io.Serializable{
     @GeneratedValue(generator = "generador_factura_seq", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(name = "NIF", unique = false, nullable = false, length = 9)
+    @Column(name = "NIF", unique = false, length = 9)
     private String nif;
 
     @ManyToMany

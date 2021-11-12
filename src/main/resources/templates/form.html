@@ -36,7 +36,7 @@
             <form>
                 <div class="row">
                     <div class="col">
-                    <label for="productSelector">Productos</label>
+                        <label for="productSelector">Productos</label>
                     </div>
                     <div class="col">
                     <select class="form-select" id="productSelect">
@@ -71,7 +71,7 @@
                 </tbody>
             </table>
 
-            <form action="archive?id=${x.id}" method="post">
+            <form action="#" th:action="@{/save}" th:object="${factura}" method="post">
                 <button type="submit" class="btn btn-primary btn-block mt-3">Guardar Factura</button>
                 </form>
         </div>
