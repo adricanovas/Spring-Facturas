@@ -15,7 +15,7 @@
 <body>
 	<h3>Lista de Facturas</h3>
 	<hr>
-	<form action="/form" method="post" style="text-align: center;">
+	<form action="/nueva" method="post" style="text-align: center;">
 		<button type="submit" class="btn btn-primary btn-block" style="width:200px">Nueva Factura</button>
 	</form>
 	<hr>
@@ -31,26 +31,26 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="tempFacturas:${facturas}" style="text-align: center; vertical-align: middle">
-				<td th:text="${tempFacturas.id}"></td>
-				<td th:text="${tempFacturas.nif}"></td>
-				<td th:text="${tempFacturas.getnproductos()}"></td>
-				<td th:text="${tempFacturas.getImporteTotal()}"></td>
-				<td th:text="${tempFacturas.getImporteIVA()}"></td>
+			<tr th:each="factura:${facturas}" style="text-align: center; vertical-align: middle">
+				<td th:text="${factura.id}"></td>
+				<td th:text="${factura.nif}"></td>
+				<td th:text="${factura.getnproductos()}"></td>
+				<td th:text="${factura.getImporteTotal()}"></td>
+				<td th:text="${factura.getImporteIVA()}"></td>
 				<td>
 					<div class="row">
 						<div class="col col-lg-2">
-							<form action="archive?id=${x.id}" method="post">
+							<form action="#" th:action="'/editar/' + ${factura.id}" th:object="${factura}" method="post">
 								<button type="submit" class="btn btn-primary btn-block">Ver</button>
 							</form>
 						</div>
 						<div class="col col-lg-2">
-							<form action="archive?id=${x.id}" method="post">
+							<form action="#" th:action="'/editar/' + ${factura.id}" th:object="${factura}" method="post">
 								<button type="submit" class="btn btn-primary btn-block">Editar</button>
 							</form>
 						</div>
 						<div class="col col-lg-2">
-							<form action="archive?id=${x.id}" method="post">
+							<form action="#" th:action="'/delete/' + ${factura.id}" th:object="${factura}" method="post">
 								<button type="submit" class="btn btn-primary btn-block">Borrar</button>
 							</form>
 						</div>
