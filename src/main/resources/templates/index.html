@@ -34,7 +34,7 @@
 			<tr th:each="factura:${facturas}" style="text-align: center; vertical-align: middle">
 				<td th:text="${factura.id}"></td>
 				<td th:text="${factura.nif}"></td>
-				<td th:text="${factura.getnproductos()}"></td>
+				<td th:text="${factura.getProductos().size()}"></td>
 				<td th:text="${factura.getImporteTotal()}"></td>
 				<td th:text="${factura.getImporteIVA()}"></td>
 				<td>

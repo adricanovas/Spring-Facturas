@@ -1,22 +1,16 @@
-package com.umu.facturas.model;
+package com.umu.facturas.entities;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Data
 @Table(name = "FACTURA", schema = "FACTURAS")
@@ -52,32 +46,5 @@ public class Factura implements java.io.Serializable{
 
     public Factura(){
 
-    }
-    public String getNif() {
-        return this.nif;
-    }
-
-    public void setNif(String nif) {
-        this.nif = nif;
-    }
-
-    public Integer getId() {
-        return this.id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public List<Producto> getProductos() {
-        return this.productos;
-    }
-
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
-    }
-
-    public int getnproductos(){
-        return this.productos.size();
     }
 }

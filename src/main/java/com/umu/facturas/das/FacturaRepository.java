@@ -1,6 +1,6 @@
-package com.umu.facturas.repository;
+package com.umu.facturas.das;
 
-import com.umu.facturas.model.Factura;
+import com.umu.facturas.entities.Factura;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

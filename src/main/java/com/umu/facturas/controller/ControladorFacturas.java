@@ -1,9 +1,9 @@
 package com.umu.facturas.controller;
 
-import com.umu.facturas.model.Factura;
-import com.umu.facturas.model.Producto;
-import com.umu.facturas.repository.FacturaRepository;
-import com.umu.facturas.repository.ProductoRepository;
+import com.umu.facturas.entities.Factura;
+import com.umu.facturas.entities.Producto;
+import com.umu.facturas.das.FacturaRepository;
+import com.umu.facturas.das.ProductoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class Controlador {
+public class ControladorFacturas {
 
 	@Autowired
 	private FacturaRepository facturaRep;

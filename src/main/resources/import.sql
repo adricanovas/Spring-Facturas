@@ -1,12 +1,30 @@
-INSERT into facturas.producto(id, descripcion, precio) values(0,'Iphone 1',23.9);
-INSERT into facturas.producto(id, descripcion, precio) values(1,'Iphone 2',46.1);
-INSERT into facturas.producto(id, descripcion, precio) values(2,'Iphone 3',58.3);
-INSERT into facturas.producto(id, descripcion, precio) values(3,'Iphone 4',91.1);
-INSERT into facturas.producto(id, descripcion, precio) values(4,'Iphone 5',103.4);
-INSERT into facturas.producto(id, descripcion, precio) values(5,'Iphone 6',123.9);
-INSERT into facturas.producto(id, descripcion, precio) values(6,'Iphone 7',146.1);
-INSERT into facturas.producto(id, descripcion, precio) values(7,'Iphone 8',158.3);
-INSERT into facturas.producto(id, descripcion, precio) values(8,'Iphone 10',191.1);
-INSERT into facturas.producto(id, descripcion, precio) values(9,'Iphone X',203.4);
+INSERT into facturas.producto(id, descripcion, precio) values(0,'Instant Pot Duo',79);
+INSERT into facturas.producto(id, descripcion, precio) values(1,'Eufy RoboVac 11S',159.99);
+INSERT into facturas.producto(id, descripcion, precio) values(2,'InnoGear Upgraded Essential',11.99);
+INSERT into facturas.producto(id, descripcion, precio) values(3,'Nectar Mattress',200);
+INSERT into facturas.producto(id, descripcion, precio) values(4,'Home Chef',100);
+INSERT into facturas.producto(id, descripcion, precio) values(5,'Apple AirPods',139);
+INSERT into facturas.producto(id, descripcion, precio) values(6,'Apple AirPods 2',169);
+INSERT into facturas.producto(id, descripcion, precio) values(7,'Dash Egg Cooker',14.95);
+INSERT into facturas.producto(id, descripcion, precio) values(8,'Nordstrom card 20',20);
+INSERT into facturas.producto(id, descripcion, precio) values(9,'Nordstrom card 30',30);
+INSERT into facturas.producto(id, descripcion, precio) values(10,'Nordstrom card 40',40);
+INSERT into facturas.producto(id, descripcion, precio) values(11,'Nordstrom card 50',50);
+INSERT into facturas.producto(id, descripcion, precio) values(12,'Nordstrom card 100',100);
+INSERT into facturas.producto(id, descripcion, precio) values(13,'Fire TV Stick 4K',34.99);
+INSERT into facturas.producto(id, descripcion, precio) values(14,'Affresh',11.99);
+INSERT into facturas.producto(id, descripcion, precio) values(14,'Calphalon Nonstick',45.99);
+INSERT into facturas.producto(id, descripcion, precio) values(14,'AncestryDNA',59);
+INSERT into facturas.producto(id, descripcion, precio) values(14,'Thermoworks',6.99);
+INSERT into facturas.producto(id, descripcion, precio) values(14,'Anker SoundCore',22.95);
+INSERT into facturas.producto(id, descripcion, precio) values(14,'Meter Luggage',9.39);
+INSERT into facturas.producto(id, descripcion, precio) values(14,'EZ-DUZ-IT Deluxe',9.90);
 
 INSERT into facturas.factura(id, nif) values(23, '12351349F')
+
+INSERT into facturas.factura_producto(factura_id, producto_id) values(23, 0)
+INSERT into facturas.factura_producto(factura_id, producto_id) values(23, 0)
+INSERT into facturas.factura_producto(factura_id, producto_id) values(23, 0)
+INSERT into facturas.factura_producto(factura_id, producto_id) values(23, 0)
+INSERT into facturas.factura_producto(factura_id, producto_id) values(23, 0)
+INSERT into facturas.factura_producto(factura_id, producto_id) values(23, 0)
