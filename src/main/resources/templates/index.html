@@ -45,9 +45,11 @@
 							</form>
 						</div>
 						<div class="col col-lg-2">
-							<form action="#" th:action="'/editar/' + ${factura.id}" th:object="${factura}" method="post">
-								<button type="submit" class="btn btn-primary btn-block">Editar</button>
-							</form>
+							<div th:if="${!factura.consolidada}">
+								<form action="#" th:action="'/editar/' + ${factura.id}" th:object="${factura}" method="post">
+									<button type="submit" class="btn btn-primary btn-block">Editar</button>
+								</form>
+							</div>
 						</div>
 						<div class="col col-lg-2">
 							<form action="#" th:action="'/delete/' + ${factura.id}" th:object="${factura}" method="post">
@@ -55,9 +57,11 @@
 							</form>
 						</div>
 						<div class="col col-lg-2">
-							<form action="archive?id=${x.id}" method="post">
-								<button type="submit" class="btn btn-primary btn-block">Consolidar</button>
-							</form>
+							<div th:if="${!factura.consolidada}">
+								<form action="#" th:action="'consolidar/' + ${factura.id}" method="post">
+									<button type="submit" class="btn btn-primary btn-block">Consolidar</button>
+								</form>
+							</div>
 						</div>
 					</div>
 				</td>

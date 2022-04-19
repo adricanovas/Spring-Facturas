@@ -25,6 +25,9 @@ public class Factura implements java.io.Serializable{
     @Column(name = "NIF", unique = false, length = 9)
     private String nif;
 
+    @Column(name = "CONSOLIDADA")
+    private Boolean consolidada = false;
+
     @ManyToMany
     @JoinTable(name = "factura_producto", joinColumns = @JoinColumn(name = "factura_id"),
     inverseJoinColumns = @JoinColumn(name = "producto_id"))

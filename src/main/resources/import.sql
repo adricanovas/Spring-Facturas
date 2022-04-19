@@ -13,14 +13,14 @@ INSERT into facturas.producto(id, descripcion, precio) values(11,'Nordstrom card
 INSERT into facturas.producto(id, descripcion, precio) values(12,'Nordstrom card 100',100);
 INSERT into facturas.producto(id, descripcion, precio) values(13,'Fire TV Stick 4K',34.99);
 INSERT into facturas.producto(id, descripcion, precio) values(14,'Affresh',11.99);
-INSERT into facturas.producto(id, descripcion, precio) values(14,'Calphalon Nonstick',45.99);
-INSERT into facturas.producto(id, descripcion, precio) values(14,'AncestryDNA',59);
-INSERT into facturas.producto(id, descripcion, precio) values(14,'Thermoworks',6.99);
-INSERT into facturas.producto(id, descripcion, precio) values(14,'Anker SoundCore',22.95);
-INSERT into facturas.producto(id, descripcion, precio) values(14,'Meter Luggage',9.39);
-INSERT into facturas.producto(id, descripcion, precio) values(14,'EZ-DUZ-IT Deluxe',9.90);
+INSERT into facturas.producto(id, descripcion, precio) values(15,'Calphalon Nonstick',45.99);
+INSERT into facturas.producto(id, descripcion, precio) values(16,'AncestryDNA',59);
+INSERT into facturas.producto(id, descripcion, precio) values(17,'Thermoworks',6.99);
+INSERT into facturas.producto(id, descripcion, precio) values(18,'Anker SoundCore',22.95);
+INSERT into facturas.producto(id, descripcion, precio) values(19,'Meter Luggage',9.39);
+INSERT into facturas.producto(id, descripcion, precio) values(20,'EZ-DUZ-IT Deluxe',9.90);
 
-INSERT into facturas.factura(id, nif) values(23, '12351349F')
+INSERT into facturas.factura(id, nif, consolidada) values(23, '12351349F', false)
 
 INSERT into facturas.factura_producto(factura_id, producto_id) values(23, 0)
 INSERT into facturas.factura_producto(factura_id, producto_id) values(23, 0)

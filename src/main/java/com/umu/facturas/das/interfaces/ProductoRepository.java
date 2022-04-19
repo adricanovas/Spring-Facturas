@@ -1,4 +1,4 @@
-package com.umu.facturas.das;
+package com.umu.facturas.das.interfaces;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
