@@ -28,9 +28,6 @@ public class Producto implements java.io.Serializable{
     @Column(name = "PRECIO", nullable = false, precision = 17, scale = 0)
     private double precio;
 
-    @ManyToMany(mappedBy = "productos")
-    private List<Factura> factura = new LinkedList<Factura>();
-
     public Producto(){
 
     }

@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
             <h2>Factura</h2>
-            <form th:object="${factura}" form action="#" th:action="@{/save}" method="post">
+            <form th:object="${factura}" form action="#" th:action="@{/guardar}" method="post">
                 <ul th:if="${#fields.hasErrors('*')}">
                     <li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>
                 </ul>
@@ -62,7 +62,7 @@
                         <td th:text="${producto.precio}"></td>
                         <td th:text="${producto.precio}"></td>
                         <td>
-                            <form action="archive?id=${x.id}" method="post">
+                            <form action="#" method="post" th:action="'/deletep' + ${producto.id}">
                                 <button type="submit">Eliminar</button>
                             </form>
                         </td>
@@ -71,8 +71,9 @@
                 </table>
                 <div class="row">
                     <div class="col">
-                        <button type="submit" class="btn btn-primary btn-block mt-3" name="save">Guardar Factura</button>
+                        <button type="submit" class="btn btn-primary btn-block mt-3" name="guardar">Guardar Factura</button>
                     </div>
+                </div>
             </form>
             <div class="col">
                 <form action="#" th:action="@{/}" method="get">

@@ -15,8 +15,8 @@ import lombok.Setter;
 @Data
 @Table(name = "FACTURA", schema = "FACTURAS")
 @SequenceGenerator(schema = "FACTURAS", sequenceName = "factura_seq", name = "generador_factura_seq", initialValue = 0, allocationSize = 1)
-
 public class Factura implements java.io.Serializable{
+
     @Id
     @Column(name = "ID", unique = true, nullable = false)
     @GeneratedValue(generator = "generador_factura_seq", strategy = GenerationType.SEQUENCE)

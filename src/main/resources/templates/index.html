@@ -27,6 +27,7 @@
 				<th>Nº de productos</th>
 				<th>Importe</th>
 				<th>Importe IVA</th>
+				<th>Consolidada</th>
 				<th>Acciones</th>
 			</tr>
 		</thead>
@@ -37,6 +38,10 @@
 				<td th:text="${factura.getProductos().size()}"></td>
 				<td th:text="${factura.getImporteTotal()}"></td>
 				<td th:text="${factura.getImporteIVA()}"></td>
+				<div th:switch="${factura.getConsolidada()}">
+					<td th:case="true">Sí</td>
+					<td th:case="false">No</td>
+				</div>
 				<td>
 					<div class="row">
 						<div class="col col-lg-2">
@@ -52,9 +57,11 @@
 							</div>
 						</div>
 						<div class="col col-lg-2">
-							<form action="#" th:action="'/delete/' + ${factura.id}" th:object="${factura}" method="post">
-								<button type="submit" class="btn btn-primary btn-block">Borrar</button>
-							</form>
+							<div th:if="${!factura.consolidada}">
+								<form action="#" th:action="'/deletef/' + ${factura.id}" th:object="${factura}" method="post">
+									<button type="submit" class="btn btn-primary btn-block">Borrar</button>
+								</form>
+							</div>
 						</div>
 						<div class="col col-lg-2">
 							<div th:if="${!factura.consolidada}">
