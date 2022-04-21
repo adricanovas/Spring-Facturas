@@ -23,14 +23,14 @@
                         <label>Factura ID</label>
                         <input type="number" class="form-control" th:field="*{id}" th:disabled=true>
                         <label>NIF</label>
-                        <input type="text" class="form-control" th:field="*{nif}" th:disabled="*{consolidada}">
+                        <input type="text" class="form-control" th:field="*{nif}" th:disabled=true>
                     </div>
                 </div>
             </form>
             <form th:action="@{/}" method="post">
-                    <div class="col col-lg-2">
-                        <button type="submit" class="btn btn-primary btn-block mt-3" method="get">Volver</button>
-                    </div>
+                <div class="col col-lg-2">
+                    <button type="submit" class="btn btn-primary btn-block mt-3" method="get">Volver</button>
+                </div>
             </form>
             <form th:object="${articulos}" method="post">
                 <br>
@@ -48,7 +48,14 @@
                         <td th:text="${articulo.descripcion}"></td>
                         <td th:text="${articulo.precio}"></td>
                         <td>
-                            <a th:href="@{'/eliminar/' + ${articulo.id} + '/' + ${factura.id}}" class="btn btn-danger">Borrar</a>
+                            <span th:if="${factura.consolidada}">
+                                <a th:href="@{'/eliminar/' + ${articulo.id} + '/' + ${factura.id}}"
+                                   class="btn btn-danger disabled">Borrar</a>
+                            </span>
+                            <span th:if="!${factura.consolidada}">
+                                <a th:href="@{'/eliminar/' + ${articulo.id} + '/' + ${factura.id}}"
+                                   class="btn btn-danger">Borrar</a>
+                            </span>
                         </td>
                     </tr>
                     </tbody>
@@ -60,12 +67,15 @@
                         <label>Productos</label>
                     </div>
                     <div class="col">
-                        <select class="form-select" name="idProducto">
-                            <option th:each="producto:${productos}" th:text="${producto.descripcion}" th:value="${producto.id}"></option>
+                        <select class="form-select" name="idProducto" th:disabled="${factura.consolidada}">
+                            <option th:each="producto:${productos}" th:text="${producto.descripcion}"
+                                    th:value="${producto.id}"></option>
                         </select>
                     </div>
                     <div class="col">
-                        <button type="submit" class="btn btn-primary mx-sm-3 mb-2" name="addProduct">Incluir producto</button>
+                        <button type="submit" class="btn btn-primary mx-sm-3 mb-2" name="addProduct"
+                                th:disabled="${factura.consolidada}">Incluir producto
+                        </button>
                     </div>
                 </div>
             </form>

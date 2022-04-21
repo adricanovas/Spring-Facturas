@@ -14,9 +14,9 @@ import lombok.Getter;
 @Entity
 @Data
 @Table(name = "PRODUCTO", schema = "FACTURAS")
-@NamedQueries({ @NamedQuery(name = "Producto.obtenerProductoTodos", query = "SELECT producto FROM Producto producto")})
+@NamedQueries({@NamedQuery(name = "Producto.obtenerProductoTodos", query = "SELECT producto FROM Producto producto")})
 @SequenceGenerator(schema = "FACTURAS", sequenceName = "producto_seq", name = "generador_producto_seq", initialValue = 0, allocationSize = 1)
-public class Producto implements java.io.Serializable{
+public class Producto implements java.io.Serializable {
     @Id
     @Column(name = "ID", unique = true, nullable = false)
     @GeneratedValue(generator = "generador_producto_seq", strategy = GenerationType.SEQUENCE)
@@ -28,7 +28,7 @@ public class Producto implements java.io.Serializable{
     @Column(name = "PRECIO", nullable = false, precision = 17, scale = 0)
     private double precio;
 
-    public Producto(){
+    public Producto() {
 
     }
 }
