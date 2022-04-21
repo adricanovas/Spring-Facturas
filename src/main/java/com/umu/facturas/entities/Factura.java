@@ -44,7 +44,7 @@ public class Factura implements java.io.Serializable{
 
     @Transient
     public double getImporteIVA(){
-        return getImporteTotal() + getImporteTotal() * 0.21;
+        return Math.round(getImporteTotal() + getImporteTotal() * 0.21);
     }
 
     public Factura(){
